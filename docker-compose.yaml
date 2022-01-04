@@ -1,0 +1,33 @@
+version: "3.4"
+networks:
+  vozynetwork:
+      name: vozynetwork.localhost
+services:
+  vozy-api:
+    build: .
+    image: vozyapi:latest
+    container_name: vozy-app
+    env_file:
+      - .env
+    networks:
+      default:
+      vozynetwork:
+    volumes:
+      - .:/opt/app
+    ports:
+      - "5000:5000"
+  mongo-db:
+    image: mongo:4.4.0
+    container_name: vozy-mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    networks:
+      default:
+      vozynetwork:
+    ports:
+      - "27018:27017"
+    healthcheck: # re-run rs.initiate() after startup if it failed.
+      test: test $$(echo "db.runCommand({serverStatus:1}).ok" | mongo mongodb://root:root@localhost:27017/admin?authSource=admin --quiet) -eq 1
+      interval: 10s
+      start_period: 30s
