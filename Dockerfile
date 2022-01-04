@@ -39,5 +39,6 @@ RUN apt-get update; \
 ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 COPY . /opt/app
 WORKDIR /opt/app
-RUN poetry install --no-dev
+RUN poetry install --no-dev  && rm -rf ~/.cache/pypoetry/{cache,artifacts}
 ENTRYPOINT ["flask", "run", "--host=0.0.0.0"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]

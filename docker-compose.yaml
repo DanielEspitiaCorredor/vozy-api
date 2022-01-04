@@ -22,11 +22,14 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=root
+      - MONGO_INITDB_DATABASE=vozydb
     networks:
       default:
       vozynetwork:
     ports:
       - "27018:27017"
+    volumes:
+      - ./bin/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     healthcheck: # re-run rs.initiate() after startup if it failed.
       test: test $$(echo "db.runCommand({serverStatus:1}).ok" | mongo mongodb://root:root@localhost:27017/admin?authSource=admin --quiet) -eq 1
       interval: 10s
