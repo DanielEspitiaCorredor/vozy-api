@@ -21,5 +21,6 @@ app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(seconds=int(environ['JWT_ACCE
 
 jwt = JWTManager(app)
 
-# User app routes.
+# App routes.
 import vozy_api.users.auth
+import vozy_api.app.posts

@@ -1,5 +1,4 @@
-from vozy_api.database import db
-import mongoengine
+from vozy_api.db_config import db
 from datetime import datetime
 
 class User(db.Document):

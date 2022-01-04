@@ -2,20 +2,21 @@ from vozy_api import errors
 from flask import request
 
 
-def validate_json_request(body_keys: list=[], allowed_params: list=[]):
+def validate_request(body_keys: dict ={}, allowed_params: list=[]):
     """
-    Decorator used to validate json request. This function can also be used to validate GET parameters.
+    Decorator used to validate request. This function can also be used to validate GET parameters.
     """ 
     def inner(func):
         
         def wrapper(*args, **kwargs):
             try:
-                if body_keys:
+                keys = body_keys.get(request.method, [])
+                if keys and request.method in ["POST", "PATCH", "PUT"]:
                     if not request.is_json:
                         return errors.ERR_NOT_JSON_PAYLOAD
-                    validate_body(body=request.get_json(), body_keys=body_keys)
+                    validate_body(body=request.get_json(), body_keys=keys)
                 
-                if allowed_params:
+                if allowed_params and request.method == "GET":
                     validate_params(params=request.args, allowed_params=allowed_params)
                 return func(*args, **kwargs)
             
