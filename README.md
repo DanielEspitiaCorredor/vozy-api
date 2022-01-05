@@ -23,7 +23,34 @@ docker-compose up -d --build
 
 Por último, si los contenedores iniciaron correctamente. La API de vozy estará expuesta en `http://localhost:5000`
 
-# Colecciones de Postman
+# Unit test
+
+Para ejecutar las pruebas unitarias, dentro del contenedor `vozy-app` ejecute `python -m unittest --verbose`. Hasta este momento se encuentran implementadas 11 pruebas que validan el funcionamiento de la aplicación
+
+```
+# python -m unittest --verbose
+test_create_post_fail (tests.test_vozy_api.VozyAPITest) ... ok
+test_create_posts (tests.test_vozy_api.VozyAPITest) ... ok
+test_delete_post (tests.test_vozy_api.VozyAPITest) ... ok
+test_list_posts (tests.test_vozy_api.VozyAPITest) ...
+ok
+test_login_fail (tests.test_vozy_api.VozyAPITest) ... User object
+ok
+test_login_succeeded (tests.test_vozy_api.VozyAPITest) ... User object
+ok
+test_register_fail (tests.test_vozy_api.VozyAPITest) ... ok
+test_register_succeeded (tests.test_vozy_api.VozyAPITest) ... ok
+test_update_post (tests.test_vozy_api.VozyAPITest) ... [<Post 61d5189d3fc16c76d09d2b97>]
+ok
+test_update_post_fail (tests.test_vozy_api.VozyAPITest) ... ok
+test_user_already_exist (tests.test_vozy_api.VozyAPITest) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.200s
+
+OK
+```
+# Postman collections
 
 Para facilitar la interacción con el proyecto, se adjuntan la coleccion de postman de la API. Para importarla siga los siguientes pasos:
 

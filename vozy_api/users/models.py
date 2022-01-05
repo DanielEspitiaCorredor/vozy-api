@@ -1,13 +1,14 @@
 from vozy_api.db_config import db
+from mongoengine import Document, StringField, EmailField, DateTimeField
 from datetime import datetime
 
-class User(db.Document):
-    name         = db.StringField(max_length=50)
-    username     = db.StringField(max_length=50, required=True)
-    email        = db.EmailField(required=True)
-    password     = db.StringField(required=True)
-    created_at   = db.DateTimeField()
-    last_modified   = db.DateTimeField()
+class User(Document):
+    name         = StringField(max_length=50)
+    username     = StringField(max_length=50, required=True)
+    email        = EmailField(required=True)
+    password     = StringField(required=True)
+    created_at   = DateTimeField()
+    last_modified   = DateTimeField()
     
     def save(self, *args, **kwargs):
         if not self.created_at:

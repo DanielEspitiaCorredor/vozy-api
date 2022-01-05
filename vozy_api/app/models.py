@@ -1,11 +1,11 @@
-from vozy_api.db_config import db
+from mongoengine import Document, StringField, DateTimeField
 from datetime import datetime
 
-class Post(db.Document):
-    created_at   = db.DateTimeField()
-    owner_id     = db.StringField(required=True) # User that make the post
-    text         = db.StringField(required=True)
-    source       = db.StringField(required=True)
+class Post(Document):
+    created_at   = DateTimeField()
+    owner_id     = StringField(required=True) # User that make the post
+    text         = StringField(required=True)
+    source       = StringField(required=True)
     
     def save(self, *args, **kwargs):
         if not self.created_at:
