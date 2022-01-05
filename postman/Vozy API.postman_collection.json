@@ -1,0 +1,1207 @@
+{
+	"info": {
+		"_postman_id": "0dabed0a-aa40-428f-aa9a-8c05f599d4d3",
+		"name": "Vozy API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Daniel Espitia\",\r\n    \"username\": \"danielespitia\",\r\n    \"email\": \"daniel@gmail.com\",\r\n    \"password\": \"daniel.espitia99\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/auth/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "HTTP_400_USER_NOT_AVALAIBLE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Daniel Espitia\",\r\n    \"username\": \"danielespitia1\",\r\n    \"email\": \"daniel1@gmail.com\",\r\n    \"password\": \"daniel.espitia99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.6.8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 05:41:15 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The user could not be registered. Please try again\"\n}"
+				},
+				{
+					"name": "HTTP_400_INVALID_CONTENT_TYPE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Daniel Espitia\",\r\n    \"username\": \"danielespitia1\",\r\n    \"email\": \"danielespitia@gmail.com\",\r\n    \"password\": \"daniel.espitia99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.6.8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 05:42:14 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This endpoint only allows json payload\"\n}"
+				},
+				{
+					"name": "HTTP_400_INVALID_PARAMS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Daniel Espitia\",\r\n    \"email\": \"danielespitia@gmail.com\",\r\n    \"password\": \"daniel.espitia99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.6.8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 05:43:35 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid params\"\n}"
+				},
+				{
+					"name": "HTTP_200_USER_REGISTERED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Daniel Espitia\",\r\n    \"username\": \"danielespitiacorredor\",\r\n    \"email\": \"danielespitia@gmail.com\",\r\n    \"password\": \"daniel.espitia99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.6.8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 05:44:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let res = pm.response.json();\r",
+							"\r",
+							"if(\"access_token\" in res){\r",
+							"    pm.environment.set(\"access_token\", res[\"access_token\"]);\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"danielespitia\",\r\n    \"password\": \"daniel.espitia99\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/auth/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "HTTP_400_INVALID_CONTENT_TYPE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"danielespitiacorredor\",\r\n    \"password\": \"daniel.espitia99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.6.8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 05:44:58 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This endpoint only allows json payload\"\n}"
+				},
+				{
+					"name": "HTTP_400_INVALID_PARAMS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"daniel.espitia99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.6.8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 05:45:23 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid params\"\n}"
+				},
+				{
+					"name": "HTTP_400_INVALID_USER_OR_PASS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"danielespitiacorredorR\",\r\n    \"password\": \"daniel.espitia99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.6.8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 05:45:43 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid user or password\"\n}"
+				},
+				{
+					"name": "HTTP_200_LOGIN_OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"danielespitiacorredor\",\r\n    \"password\": \"daniel.espitia99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "371"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.6.8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 05:46:16 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYzNDAxNzU3NiwianRpIjoiMjQ0OGZmNjgtZTg2Mi00MTk2LTk1YzMtNGVmMmI1YTkxZDUyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImRhbmllbGVzcGl0aWFjb3JyZWRvciIsIm5iZiI6MTYzNDAxNzU3NiwiZXhwIjoxNjM0MDIxMTc2fQ.vY9F6uppKQWT7M0Tle4yJndnW4BP-fF_FoWZkcW0M0AnHmRQjTRs9TKbZSAK4A6mngcxXJIdMUT_f_HRjjK8hQ\",\n    \"id\": \"61d46b740c25eb62e5bdd05e\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List Post",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/posts",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "HTTP_200_LIST",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/posts?page=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "831"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.7.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 20:26:33 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"created_at\": \"2022-01-04T19:35:50.015000\",\n            \"id\": \"61d4a196bea91e0fd3f0467c\",\n            \"owner_id\": \"61d46b740c25eb62e5bdd05e\",\n            \"source\": \"mobile\",\n            \"text\": \"Publicación de prueba\"\n        },\n        {\n            \"created_at\": \"2022-01-04T20:01:41.667000\",\n            \"id\": \"61d4a7a5a348b302bf5e8935\",\n            \"owner_id\": \"61d46b740c25eb62e5bdd05e\",\n            \"source\": \"mobile\",\n            \"text\": \"Hola de nuevo, este es un post de prueba para vozyapi\"\n        },\n        {\n            \"created_at\": \"2022-01-04T20:01:45.592000\",\n            \"id\": \"61d4a7a9a348b302bf5e8936\",\n            \"owner_id\": \"61d46b740c25eb62e5bdd05e\",\n            \"source\": \"mobile\",\n            \"text\": \"Hola de nuevo, este es un post de prueba para vozyapi 2\"\n        }\n    ],\n    \"has_next\": false,\n    \"next\": null,\n    \"pages\": 1,\n    \"prev\": null,\n    \"results\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Save Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source\": \"mobile\",\r\n    \"text\": \"Hola de nuevo, este es un post de prueba para vozyapi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/posts",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "HTTP_400_INVALID_PARAMS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0MTMxODE2NSwianRpIjoiODFmMzEwZTItNGUxNy00NzQzLTk2MzctYTM5OTQyYTg3ZmU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjYxZDQ2Yjc0MGMyNWViNjJlNWJkZDA1ZSIsIm5iZiI6MTY0MTMxODE2NSwiZXhwIjoxNjQxMzIxNzY1fQ.G5nlV25ujCB3MdfAp1vbOyi_ymrZuOMa0ymFuzhi6WU0u7geC_Xl5aopN5lPztm8-Uizetevjolh375zEDdT4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source\": \"mobile\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2,4,5,6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.7.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 17:45:42 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid params\"\n}"
+				},
+				{
+					"name": "HTTP_400_INVALID_CONTENT_TYPE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0MTMxODE2NSwianRpIjoiODFmMzEwZTItNGUxNy00NzQzLTk2MzctYTM5OTQyYTg3ZmU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjYxZDQ2Yjc0MGMyNWViNjJlNWJkZDA1ZSIsIm5iZiI6MTY0MTMxODE2NSwiZXhwIjoxNjQxMzIxNzY1fQ.G5nlV25ujCB3MdfAp1vbOyi_ymrZuOMa0ymFuzhi6WU0u7geC_Xl5aopN5lPztm8-Uizetevjolh375zEDdT4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source\": \"mobile\",\r\n    \"text\": \"Hola este es un post de prueba para vozyapi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "html"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2,4,5,6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.7.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 17:46:36 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This endpoint only allows json payload\"\n}"
+				},
+				{
+					"name": "HTTP_200_SAVE_POST",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0MTMxODE2NSwianRpIjoiODFmMzEwZTItNGUxNy00NzQzLTk2MzctYTM5OTQyYTg3ZmU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjYxZDQ2Yjc0MGMyNWViNjJlNWJkZDA1ZSIsIm5iZiI6MTY0MTMxODE2NSwiZXhwIjoxNjQxMzIxNzY1fQ.G5nlV25ujCB3MdfAp1vbOyi_ymrZuOMa0ymFuzhi6WU0u7geC_Xl5aopN5lPztm8-Uizetevjolh375zEDdT4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source\": \"mobile\",\r\n    \"text\": \"Hola de nuevo, este es un post de prueba para vozyapi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2,4,5,6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.7.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 17:58:19 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Post created\",\n    \"post_id\": \"61d48abbf858f40580d5841a\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"post_id\": \"61d4edfbd3a2747324e217d5\",\r\n    \"data\": {\r\n        \"text\": \"Publicación de prueba\",\r\n        \"source\": \"mobile\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/posts",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "HTTP_400_INVALID_PARAMS",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0MTMxODE2NSwianRpIjoiODFmMzEwZTItNGUxNy00NzQzLTk2MzctYTM5OTQyYTg3ZmU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjYxZDQ2Yjc0MGMyNWViNjJlNWJkZDA1ZSIsIm5iZiI6MTY0MTMxODE2NSwiZXhwIjoxNjQxMzIxNzY1fQ.G5nlV25ujCB3MdfAp1vbOyi_ymrZuOMa0ymFuzhi6WU0u7geC_Xl5aopN5lPztm8-Uizetevjolh375zEDdT4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_id\": \"61d4a196bea91e0fd3f0467c\",\r\n    \"dat\": {\r\n        \"text\": \"Publicación de prueba\",\r\n        \"source\": \"mobile\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"create"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2,4,5,6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.7.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 17:45:42 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid params\"\n}"
+				},
+				{
+					"name": "HTTP_400_INVALID_CONTENT_TYPE",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0MTMxODE2NSwianRpIjoiODFmMzEwZTItNGUxNy00NzQzLTk2MzctYTM5OTQyYTg3ZmU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjYxZDQ2Yjc0MGMyNWViNjJlNWJkZDA1ZSIsIm5iZiI6MTY0MTMxODE2NSwiZXhwIjoxNjQxMzIxNzY1fQ.G5nlV25ujCB3MdfAp1vbOyi_ymrZuOMa0ymFuzhi6WU0u7geC_Xl5aopN5lPztm8-Uizetevjolh375zEDdT4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_id\": \"61d4a196bea91e0fd3f0467c\",\r\n    \"dat\": {\r\n        \"text\": \"Publicación de prueba\",\r\n        \"source\": \"mobile\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "html"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"create"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2,4,5,6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.7.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 17:46:36 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This endpoint only allows json payload\"\n}"
+				},
+				{
+					"name": "HTTP_200_UPDATE_POST",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_id\": \"61d4a196bea91e0fd3f0467c\",\r\n    \"data\": {\r\n        \"text\": \"Publicación de prueba\",\r\n        \"source\": \"mobile\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2,4,5,6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.7.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 19:38:09 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Post updated\",\n    \"post_id\": \"61d4a196bea91e0fd3f0467c\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ids\": [\r\n        \"61d4edfbd3a2747324e217d5\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/posts",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "HTTP_400_INVALID_PARAMS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0MTMxODE2NSwianRpIjoiODFmMzEwZTItNGUxNy00NzQzLTk2MzctYTM5OTQyYTg3ZmU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjYxZDQ2Yjc0MGMyNWViNjJlNWJkZDA1ZSIsIm5iZiI6MTY0MTMxODE2NSwiZXhwIjoxNjQxMzIxNzY1fQ.G5nlV25ujCB3MdfAp1vbOyi_ymrZuOMa0ymFuzhi6WU0u7geC_Xl5aopN5lPztm8-Uizetevjolh375zEDdT4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source\": \"mobile\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2,4,5,6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.7.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 17:45:42 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid params\"\n}"
+				},
+				{
+					"name": "HTTP_400_INVALID_CONTENT_TYPE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0MTMxODE2NSwianRpIjoiODFmMzEwZTItNGUxNy00NzQzLTk2MzctYTM5OTQyYTg3ZmU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjYxZDQ2Yjc0MGMyNWViNjJlNWJkZDA1ZSIsIm5iZiI6MTY0MTMxODE2NSwiZXhwIjoxNjQxMzIxNzY1fQ.G5nlV25ujCB3MdfAp1vbOyi_ymrZuOMa0ymFuzhi6WU0u7geC_Xl5aopN5lPztm8-Uizetevjolh375zEDdT4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source\": \"mobile\",\r\n    \"text\": \"Hola este es un post de prueba para vozyapi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "html"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/posts/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"posts",
+								"create"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2,4,5,6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.7.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 17:46:36 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This endpoint only allows json payload\"\n}"
+				},
+				{
+					"name": "HTTP_200_DELETE_POST",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": [\r\n        \"61d4a2b17ac709c4a321cb29\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2,4,5,6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "24"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.7.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 19:40:58 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Done\"\n}"
+				}
+			]
+		}
+	]
+}
